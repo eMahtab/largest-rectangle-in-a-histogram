@@ -12,6 +12,8 @@ class Solution {
              int minHeight = heights[i];
             for (int j = i; j < heights.length; j++) {
                 minHeight = Math.min(minHeight, heights[j]);
+                if(minHeight == 0)
+                    break;
                 maxArea = Math.max(maxArea, minHeight * (j - i + 1));
             }
             System.out.println("maxArea : " + maxArea);
