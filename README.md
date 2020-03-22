@@ -23,5 +23,33 @@ class Solution {
 }
 ```
 
+# Implementation 2 : O(n)
+```java
+class Solution {
+    public int largestRectangleArea(int[] heights) {
+        Stack<Integer> stack = new Stack<>();
+        int maxArea = 0;
+        int index = 0;
+        while (index < heights.length) {
+            if (stack.empty() || heights[index] >= heights[stack.peek()]) {
+                stack.push(index++);
+            } else {
+                int top = stack.pop();
+                int width = stack.empty() ? index : index - stack.peek() - 1;
+                maxArea = Math.max(maxArea, heights[top] * width);
+            }
+        }
+
+        while (!stack.empty()) {
+            int top = stack.pop();
+            int width = stack.empty() ? index : index - stack.peek() - 1;
+            maxArea = Math.max(maxArea, heights[top] * width);
+        }
+
+       return maxArea;
+    }
+}
+```
+
 # References :
 https://leetcode.com/articles/largest-rectangle-in-histogram
