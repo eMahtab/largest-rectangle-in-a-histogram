@@ -53,3 +53,4 @@ class Solution {
 
 # References :
 https://leetcode.com/articles/largest-rectangle-in-histogram
+https://tech.pic-collage.com/algorithm-largest-area-in-histogram-84cc70500f0c
