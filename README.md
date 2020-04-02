@@ -7,18 +7,20 @@ Given n non-negative integers representing the histogram's bar height where the 
 ```java
 class Solution {
     public int largestRectangleArea(int[] heights) {
-        int maxArea = 0;
-        for (int i = 0; i < heights.length; i++) {
-             int minHeight = heights[i];
-            for (int j = i; j < heights.length; j++) {
+        if(heights == null || heights.length == 0)
+            return 0;
+        int area = heights[0];
+        for(int i = 0; i < heights.length; i++) {
+            int minHeight = heights[i];
+            area = Math.max(area, heights[i]);
+            for(int j = i+1; j < heights.length; j++) {
                 minHeight = Math.min(minHeight, heights[j]);
                 if(minHeight == 0)
                     break;
-                maxArea = Math.max(maxArea, minHeight * (j - i + 1));
+                area = Math.max(area, minHeight * (j - i +1));
             }
-            System.out.println("maxArea : " + maxArea);
         }
-        return maxArea;
+        return area;
     }
 }
 ```
