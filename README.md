@@ -3,6 +3,8 @@
 
 Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
 
+![Largest Rectangle in a histogram](histogram_area.png?raw=true "Title")
+
 # Implementation 1 : O(n^2)
 ```java
 class Solution {
