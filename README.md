@@ -5,6 +5,8 @@ Given n non-negative integers representing the histogram's bar height where the 
 
 ![Largest Rectangle in a histogram](histogram_area.png?raw=true "Title")
 
+Above is a histogram where width of each bar is 1, given height = [2,1,5,6,2,3]. The largest rectangle is shown in the shaded area, which has area = 10 unit.
+
 # Implementation 1 : O(n^2)
 ```java
 class Solution {
